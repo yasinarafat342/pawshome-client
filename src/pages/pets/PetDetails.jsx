@@ -247,5 +247,3 @@ const PetDetails = () => {
 };
 
 export default PetDetails;
-/ /   P e t   D e t a i l s  
- 

@@ -201,5 +201,3 @@ const UpdatePet = () => {
 };
 
 export default UpdatePet;
-/ /   U p d a t e   P e t  
- 

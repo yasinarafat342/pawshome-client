@@ -286,5 +286,3 @@ const Home = () => {
 };
 
 export default Home;
-/ /   H o m e   P a g e  
- 

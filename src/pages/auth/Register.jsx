@@ -184,5 +184,3 @@ const Register = () => {
 };
 
 export default Register;
-/ /   R e g i s t e r   P a g e  
- 
