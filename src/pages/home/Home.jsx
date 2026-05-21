@@ -144,6 +144,43 @@ const WhyAdopt = () => {
   );
 };
 
+// --- How It Works ---
+const HowItWorks = () => {
+  const steps = [
+    { step: '01', title: 'Browse Pets', desc: 'Explore our wide selection of pets looking for a home using our smart search and filter tools.' },
+    { step: '02', title: 'Submit Request', desc: 'Found your match? Submit an adoption request with your pickup date and a message.' },
+    { step: '03', title: 'Get Approved', desc: 'The pet owner or shelter reviews your request and approves it if it\'s a good fit.' },
+    { step: '04', title: 'Welcome Home', desc: 'Pick up your new family member and start your journey together!' },
+  ];
+
+  return (
+    <section className="py-20 bg-white dark:bg-gray-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="section-title mb-4">How It Works</h2>
+          <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+            Adopting a pet through PawsHome is simple, safe, and fulfilling.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((s, i) => (
+            <div key={s.step} className="relative text-center p-6">
+              {i < steps.length - 1 && (
+                <div className="hidden lg:block absolute top-10 right-0 w-1/2 h-0.5 bg-primary-100 dark:bg-primary-900" />
+              )}
+              <div className="relative z-10 w-16 h-16 bg-primary-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary-200 dark:shadow-primary-900">
+                <span className="font-display font-bold text-lg">{s.step}</span>
+              </div>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{s.title}</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // --- Success Stories ---
 const SuccessStories = () => {
   const stories = [
@@ -216,43 +253,6 @@ const PetCareTips = () => {
   );
 };
 
-// --- How It Works ---
-const HowItWorks = () => {
-  const steps = [
-    { step: '01', title: 'Browse Pets', desc: 'Explore our wide selection of pets looking for a home using our smart search and filter tools.' },
-    { step: '02', title: 'Submit Request', desc: 'Found your match? Submit an adoption request with your pickup date and a message.' },
-    { step: '03', title: 'Get Approved', desc: 'The pet owner or shelter reviews your request and approves it if it\'s a good fit.' },
-    { step: '04', title: 'Welcome Home', desc: 'Pick up your new family member and start your journey together!' },
-  ];
-
-  return (
-    <section className="py-20 bg-white dark:bg-gray-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="section-title mb-4">How It Works</h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
-            Adopting a pet through PawsHome is simple, safe, and fulfilling.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((s, i) => (
-            <div key={s.step} className="relative text-center p-6">
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 right-0 w-1/2 h-0.5 bg-primary-100 dark:bg-primary-900" />
-              )}
-              <div className="relative z-10 w-16 h-16 bg-primary-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg shadow-primary-200 dark:shadow-primary-900">
-                <span className="font-display font-bold text-lg">{s.step}</span>
-              </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">{s.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
 // --- CTA Banner ---
 const CTABanner = () => (
   <section className="py-16 bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-800 dark:to-primary-950">
@@ -270,7 +270,141 @@ const CTABanner = () => (
   </section>
 );
 
-// --- Main Home ---
+// --- App Download Banner ---
+const AppDownloadBanner = () => {
+  return (
+    <section className="py-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* এখানে ব্যাকগ্রাউন্ড পরিবর্তন করে orange থেকে purple এবং indigo-র কম্বিনেশন করা হয়েছে */}
+        <div className="relative bg-gradient-to-br from-purple-600 via-purple-700 to-indigo-600 dark:from-purple-800 dark:via-purple-950 dark:to-slate-900 rounded-3xl overflow-hidden shadow-2xl">
+
+          {/* Background decoration */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 rounded-full blur-2xl" />
+            <div className="absolute -bottom-16 -left-16 w-64 h-64 bg-white/10 rounded-full blur-2xl" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-white/5 rounded-full" />
+            {/* Paw prints */}
+            {["top-6 left-12", "bottom-8 right-24", "top-12 right-48", "bottom-6 left-48"].map((pos, i) => (
+              <span key={i} className={`absolute text-white/10 text-4xl ${pos}`}>🐾</span>
+            ))}
+          </div>
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 px-8 py-12 lg:px-16">
+
+            {/* Left — Text */}
+            <div className="text-center lg:text-left max-w-lg">
+              <div className="inline-flex items-center gap-2 bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-4">
+                <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
+                Now Available
+              </div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-3">
+                Take PawsHome<br />
+                {/* হাইলাইট টেক্সট কালারটি পার্পলের সাথে মানানসই pink-200 করা হয়েছে */}
+                <span className="text-pink-200">Everywhere You Go</span>
+              </h2>
+              <p className="text-purple-100 text-base mb-8 leading-relaxed">
+                Browse adorable pets, submit adoption requests, and manage your listings — all from your phone. Your next best friend is just a tap away.
+              </p>
+
+              {/* Download Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                {/* App Store */}
+                <a
+                  href="#"
+                  className="flex items-center gap-3 bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-2xl transition-all duration-200 hover:scale-105 shadow-lg group"
+                >
+                  <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                  <div className="text-left">
+                    <p className="text-gray-400 text-xs leading-none">Download on the</p>
+                    <p className="text-sm font-semibold leading-tight">App Store</p>
+                  </div>
+                </a>
+
+                {/* Google Play */}
+                <a
+                  href="#"
+                  className="flex items-center gap-3 bg-black hover:bg-gray-900 text-white px-5 py-3 rounded-2xl transition-all duration-200 hover:scale-105 shadow-lg group"
+                >
+                  <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.18 23.76c.3.17.63.24.97.2l12.49-7.2-2.79-2.79-10.67 9.79zm-1.85-21.1C1.12 2.94 1 3.24 1 3.57v16.86c0 .33.12.63.33.87l.09.08 9.44-9.44v-.22L1.42 2.58l-.09.08zm19.44 8.83l-2.67-1.54-3.01 3.01 3.01 3.01 2.69-1.55c.77-.44.77-1.49-.02-1.93zM4.15.24L16.64 7.44l-2.79 2.79L3.18.44C3.48.06 3.85-.05 4.15.24z"/>
+                  </svg>
+                  <div className="text-left">
+                    <p className="text-gray-400 text-xs leading-none">Get it on</p>
+                    <p className="text-sm font-semibold leading-tight">Google Play</p>
+                  </div>
+                </a>
+              </div>
+
+              {/* Stats */}
+              <div className="flex items-center gap-6 mt-8 justify-center lg:justify-start">
+                {[
+                  { value: "10K+", label: "Downloads" },
+                  { value: "4.8★", label: "Rating" },
+                  { value: "500+", label: "Pets Adopted" },
+                ].map((stat) => (
+                  <div key={stat.label} className="text-center">
+                    <p className="text-white font-bold text-lg leading-none">{stat.value}</p>
+                    <p className="text-purple-200 text-xs mt-0.5">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — Phone Mockup */}
+            <div className="relative flex-shrink-0 hidden sm:block">
+              <div className="relative w-48 h-80 lg:w-56 lg:h-96">
+                {/* Phone frame */}
+                <div className="absolute inset-0 bg-gray-900 rounded-[2.5rem] shadow-2xl border-4 border-gray-800 overflow-hidden">
+                  {/* Screen */}
+                  <div className="absolute inset-1 bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-800 rounded-[2rem] overflow-hidden">
+                    {/* Notch */}
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-gray-900 rounded-full z-10" />
+                    {/* App UI */}
+                    <div className="pt-10 px-3">
+                      {/* ফোনের ভেতরের অ্যাপ হেডারও এখানে purple করা হয়েছে */}
+                      <div className="bg-purple-600 rounded-xl p-2.5 mb-2 flex items-center gap-2">
+                        <span className="text-lg">🐾</span>
+                        <div>
+                          <p className="text-white text-xs font-bold leading-none">PawsHome</p>
+                          <p className="text-purple-200 text-[9px]">Find your pet</p>
+                        </div>
+                      </div>
+                      {/* Pet cards */}
+                      {[
+                        { name: "Buddy", type: "Golden Retriever", emoji: "🐶", color: "bg-amber-50 dark:bg-gray-700" },
+                        { name: "Whiskers", type: "Persian Cat", emoji: "🐱", color: "bg-pink-50 dark:bg-gray-700" },
+                        { name: "Tweety", type: "Cockatiel", emoji: "🐦", color: "bg-blue-50 dark:bg-gray-700" },
+                      ].map((pet) => (
+                        <div key={pet.name} className={`${pet.color} rounded-xl p-2 mb-1.5 flex items-center gap-2`}>
+                          <span className="text-xl">{pet.emoji}</span>
+                          <div className="flex-1 min-w-0">
+                            <p className="text-gray-800 dark:text-gray-100 text-xs font-semibold leading-none truncate">{pet.name}</p>
+                            <p className="text-gray-400 text-[9px] truncate">{pet.type}</p>
+                          </div>
+                          {/* ফোনের ভেতরের আইকন বাটনও purple করা হয়েছে */}
+                          <div className="w-5 h-5 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span className="text-white text-[8px]">→</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* Glow Effect */}
+                <div className="absolute inset-0 bg-purple-400/20 rounded-[2.5rem] blur-xl -z-10 scale-110" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// --- Main Home Component ---
 const Home = () => {
   return (
     <div>
@@ -281,6 +415,7 @@ const Home = () => {
       <SuccessStories />
       <PetCareTips />
       <CTABanner />
+      <AppDownloadBanner />
     </div>
   );
 };

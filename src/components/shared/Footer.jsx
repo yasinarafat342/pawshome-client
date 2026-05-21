@@ -65,15 +65,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm text-gray-400">
                 <FiMail size={15} className="text-primary-400 flex-shrink-0" />
-                hello@pawshome.com
+                ya915870@gmail.com
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-400">
                 <FiPhone size={15} className="text-primary-400 flex-shrink-0" />
-                +1 (800) PAWS-HOME
+                01963704659
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-400">
                 <FiMapPin size={15} className="text-primary-400 flex-shrink-0" />
-                123 Pet Lane, Animal City
+                Mirpur ,DHaka ,Bangladesh.
               </li>
             </ul>
           </div>
